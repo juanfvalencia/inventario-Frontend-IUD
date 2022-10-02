@@ -19,7 +19,6 @@ export const MarkView = () => {
         Swal.showLoading()
         const { data } = await getMarks();
         setMarks(data);
-        console.log(data)
         Swal.close()
     } catch (error) {
         console.log(error);
@@ -38,7 +37,6 @@ export const MarkView = () => {
 
   const handleCreateMark = async(e) =>{
     e.preventDefault()
-    console.log(valuesForm);
     try {
         Swal.fire({
           allowOutsideClick: false,
@@ -46,7 +44,6 @@ export const MarkView = () => {
         })
         Swal.showLoading()
         const { data } = await createMark(valuesForm)
-        console.log(data);
         setValuesForm({name: '', state: ''})
         listMarks();
         Swal.close()
@@ -89,7 +86,7 @@ export const MarkView = () => {
                   <th scope="col">#</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">Estado</th>
-                  <th scope="col">Fecha de compra</th>
+                  <th scope="col">Fecha de creación </th>
                   <th scope="col">Fecha de actualización</th>
                   <th scope="col"></th>
                 </tr>

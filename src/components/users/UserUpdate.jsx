@@ -28,7 +28,6 @@ export const UserUpdate = () => {
               });
               Swal.showLoading()
               const { data } = await getUserById(userId);
-              console.log(data, userId);
               setUser(data)
               Swal.close()
           } catch (error) {
@@ -58,7 +57,6 @@ export const UserUpdate = () => {
           });
           Swal.showLoading()
           const { data } = await updateUser(userId, user);
-          console.log(data);
           Swal.close()
       } catch (error) {
           console.log(error)

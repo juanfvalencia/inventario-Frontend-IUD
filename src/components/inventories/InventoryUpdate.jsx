@@ -25,7 +25,6 @@ export const InventoryUpdate = () => {
       const ListUser = async() => {
       try {
         const { data } = await getUsers();
-        console.log(data)
         setUsers(data)
       } catch (error) {
           console.log(error);
@@ -38,7 +37,6 @@ export const InventoryUpdate = () => {
       const ListMark = async() => {
         try {
           const { data } = await getMarks();
-          console.log(data)
           setMarks(data)
           } catch (error) {
             console.log(error);
@@ -51,7 +49,6 @@ export const InventoryUpdate = () => {
       const ListEquipmentType = async() => {
         try {
           const { data } = await getEquipmentTypes();
-          console.log(data)
           setTypes(data)
         } catch (error) {
           console.log(error);
@@ -64,7 +61,6 @@ export const InventoryUpdate = () => {
       const ListEquipmentState = async() => {
         try {
           const { data } = await getEquipmentStates();
-          console.log(data);
           setStates(data)
         } catch (error) {
             console.log(error)
@@ -89,7 +85,6 @@ export const InventoryUpdate = () => {
             });
     }, [ inventory ])
 
-  
 
   useEffect(() => {
     const getInventory = async() => {
@@ -100,7 +95,6 @@ export const InventoryUpdate = () => {
             });
             Swal.showLoading();
             const { data } = await getInventoryById(inventoryId)
-            console.log(data)
             setInventory(data)
             Swal.close()
         } catch (error) {
@@ -142,7 +136,6 @@ const handleOnSubmit = async (e) => {
         });
         Swal.showLoading();
         const { data } = await updateInventory(inventoryId, inventory);
-        console.log(data);
         Swal.close();
     } catch (error) {
         console.log(error)

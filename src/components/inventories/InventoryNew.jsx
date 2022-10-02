@@ -21,7 +21,6 @@ export const InventoryNew = ({ handleOpenModal, ListInventories }) => {
         const ListUser = async() => {
             try {
                 const { data } = await getUsers();
-                console.log(data)
                 setUsers(data)
             } catch (error) {
                 console.log(error);
@@ -34,7 +33,6 @@ export const InventoryNew = ({ handleOpenModal, ListInventories }) => {
         const ListMark = async() => {
             try {
                 const { data } = await getMarks();
-                console.log(data)
                 setMarks(data)
             } catch (error) {
                 console.log(error);
@@ -47,7 +45,6 @@ export const InventoryNew = ({ handleOpenModal, ListInventories }) => {
         const ListEquipmentType = async() => {
         try {
             const { data } = await getEquipmentTypes();
-                console.log(data)
                 setTypes(data)
             } catch (error) {
                 console.log(error);
@@ -60,7 +57,6 @@ export const InventoryNew = ({ handleOpenModal, ListInventories }) => {
         const ListEquipmentState = async() => {
             try {
                 const { data } = await getEquipmentStates();
-                console.log(data);
                 setStates(data)
             } catch (error) {
                 console.log(error)
@@ -76,7 +72,6 @@ export const InventoryNew = ({ handleOpenModal, ListInventories }) => {
 
     const handleOnSubmit = async (e) => {
         e.preventDefault()
-        console.log(valuesForm)
         const inventory = {
             serial: serial, model: model, description: description, color: color, 
             photo: photo, buyDate: buyDate, price: price,
@@ -101,7 +96,6 @@ export const InventoryNew = ({ handleOpenModal, ListInventories }) => {
             });
             Swal.showLoading();
             const { data } = await createInventory(inventory);
-            console.log(data);
             Swal.close();
             handleOpenModal()
             ListInventories()

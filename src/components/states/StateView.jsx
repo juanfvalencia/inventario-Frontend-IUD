@@ -20,7 +20,6 @@ export const StateView = () => {
       Swal.showLoading()
       const { data } = await getEquipmentStates()
       setEquipmentStates(data)
-      console.log(data);
       Swal.close()
     } catch (error) {
       console.log(error)
@@ -39,7 +38,6 @@ export const StateView = () => {
 
   const handleCreateEquipmentState = async(e) => {
     e.preventDefault()
-    console.log(valuesForm)
     try {
       Swal.fire({
         allowOutsideClick: false,
@@ -49,7 +47,6 @@ export const StateView = () => {
       const { data } = await createEquipmentState(valuesForm)
       setValuesForm({name: '', state: ''})
       ListEquipmentStates()
-      console.log(data)
       Swal.close()
     } catch (error) {
       console.log(error);
@@ -90,7 +87,7 @@ export const StateView = () => {
                   <th scope="col">#</th>
                   <th scope="col">Tipo</th>
                   <th scope="col">Estado</th>
-                  <th scope="col">Fecha de compra</th>
+                  <th scope="col">Fecha de creación</th>
                   <th scope="col">Fecha de actualización</th>
                   <th scope="col"></th>
                 </tr>

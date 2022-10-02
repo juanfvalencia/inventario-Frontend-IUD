@@ -28,7 +28,6 @@ export const StateUpdate = () => {
               });
               Swal.showLoading()
               const { data } = await getEquipmentStateById(equipmetStateId);
-              console.log(data);
               setEquipmentState(data)
               Swal.close()
           } catch (error) {
@@ -57,7 +56,6 @@ export const StateUpdate = () => {
           });
           Swal.showLoading()
           const { data } = await updateEquipmentState(equipmetStateId, equipmentState);
-          console.log(data);
           Swal.close()
       } catch (error) {
           console.log(error)

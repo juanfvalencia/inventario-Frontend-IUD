@@ -19,7 +19,6 @@ export const UserView = () => {
       Swal.showLoading()
       const { data } = await getUsers();
       setUsers(data)
-      console.log(data);
       Swal.close()
     } catch (error) {
       console.log(error)
@@ -46,7 +45,6 @@ export const UserView = () => {
         })
         Swal.showLoading()
         const { data } = await createUser(valuesForm)
-        console.log(data);
         setValuesForm({name: '', email: '', state: ''})
         ListUsers();
         Swal.close()
@@ -95,7 +93,7 @@ export const UserView = () => {
                   <th scope="col">Nombre</th>
                   <th scope="col">Email</th>
                   <th scope="col">Estado</th>
-                  <th scope="col">Fecha de compra</th>
+                  <th scope="col">Fecha de creación</th>
                   <th scope="col">Fecha de actualización</th>
                   <th scope="col"></th>
                 </tr>

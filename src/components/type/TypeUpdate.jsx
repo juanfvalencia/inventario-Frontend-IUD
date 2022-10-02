@@ -28,7 +28,6 @@ export const TypeUpdate = () => {
                 });
                 Swal.showLoading()
                 const { data } = await getEquipmentTypeById(equipmentTypeId);
-                console.log(data, equipmentTypeId);
                 setEquipmentType(data)
                 Swal.close()
             } catch (error) {
@@ -57,7 +56,6 @@ export const TypeUpdate = () => {
             });
             Swal.showLoading()
             const { data } = await updateEquipmentType(equipmentTypeId, equipmentType);
-            console.log(data);
             Swal.close()
         } catch (error) {
             console.log(error)

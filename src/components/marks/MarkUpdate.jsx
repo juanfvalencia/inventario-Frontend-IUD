@@ -26,7 +26,6 @@ export const MarkUpdate = () => {
                 })
                 Swal.showLoading()
                 const { data } = await getMarkById(markId);
-                console.log(data, markId);
                 setMark(data)
                 Swal.close()
             } catch (error) {
@@ -55,7 +54,6 @@ export const MarkUpdate = () => {
             });
             Swal.showLoading()
             const { data } = await updateMark(markId, mark);
-            console.log(data);
             Swal.close()
         } catch (error) {
             console.log(error)
@@ -67,7 +65,7 @@ export const MarkUpdate = () => {
     <div className='container-fluid mt-3 mb-2'>
         <div className='card'>
             <div className='card-header'>
-                <h5 className='card-t card-title '> Actualizar marca</h5>
+                <h5 className='card-t card-title '> Actualizar Marca</h5>
             </div>
             <div className='card-body'>
                 <div className='row container-g'>
